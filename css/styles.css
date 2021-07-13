@@ -306,10 +306,12 @@ body {
   background-color: var(--text-color-on-hover-bg);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .icon-close {
   fill: var(--logo-color);
+  margin: auto;
 }
 
 /* Features */
@@ -562,8 +564,15 @@ body {
   background-color: var(--bgc);
 }
 
+.section-address {
+  display: flex;
+  min-width: 231px;
+  list-style-type: none;
+  flex-flow: column;
+}
+
 .footer .logo {
-  display: block;
+  display: inline-block;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
@@ -662,6 +671,77 @@ body {
 
 .footer-socials-logo {
   fill: var(--text-color-on-hover-bg);
+}
+
+/* subscribe form */
+
+.subscribe-form {
+  width: 100%;
+  height: auto;
+  margin-left: 93px;
+  padding-top: 12px;
+}
+
+.input-btn-container {
+  display: flex;
+  width: 570px;
+}
+
+.subscribe-label {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-color-on-hover-bg);
+}
+
+.subscribe-input {
+  margin-right: 12px;
+  height: 50px;
+  width: 358px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: transparent;
+  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15)); */
+}
+
+.subscribe-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 29px;
+  background: var(--accent-color);
+  border: none;
+  border-radius: 4px;
+
+  transition-property: background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0ms;
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  background-color: var(--hero-btn-hover);
+  outline: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.btn-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
+  color: var(--text-color-on-hover-bg);
+}
+
+.btn-icon {
+  margin-left: 10px;
+   fill: var(--text-color-on-hover-bg);
 }
 
 /* ---------------------------Page - Portfolio */
