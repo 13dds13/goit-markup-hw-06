@@ -269,6 +269,7 @@ body {
   left: 0;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.2);
+
   transition-property: opacity, background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -312,6 +313,42 @@ body {
 .icon-close {
   fill: var(--logo-color);
   margin: auto;
+}
+
+.modal-title {
+  margin-bottom: 12px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--title-color);
+}
+
+.name-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-name {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--text-color);
+
+  text-align: left;
+}
+
+.input-name {
+  height: 40px;
+  padding-left: 42px;
+  margin-bottom: 10px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
 }
 
 /* Features */
@@ -741,7 +778,7 @@ body {
 
 .btn-icon {
   margin-left: 10px;
-   fill: var(--text-color-on-hover-bg);
+  fill: var(--text-color-on-hover-bg);
 }
 
 /* ---------------------------Page - Portfolio */

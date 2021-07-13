@@ -72,6 +72,43 @@
                 <use href="./images/symbol-defs.svg#icon-close-btn"></use>
               </svg>
             </button>
+            <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+            <form name="user-info">
+              <div class="name-wrap">
+                <label for="user-name" class="form-name">Имя</label>
+                <input type="text" name="name" id="user-name" class="input-name" />
+              </div>
+
+              <div class="tel-wrap">
+                <label for="user-tel" class="form-tel">Телефон</label>
+                <input type="tel" name="tel" id="user-tel" />
+              </div>
+
+              <div class="mail-wrap">
+                <label for="user-mail" class="form-mail">Почта</label>
+                <input type="email" name="email" id="user-mail" />
+              </div>
+
+              <div class="comment-wrap">
+                <label for="user-comment">Комментарий</label>
+                <textarea
+                  name="form-comment"
+                  id="user-comment"
+                  cols="30"
+                  rows="10"
+                  placeholder="Введите текст"
+                ></textarea>
+              </div>
+
+              <div class="agree-wrap">
+                <input type="checkbox" name="checkbox" id="check-agree" />
+                <label for="check-agree">
+                  Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a>
+                </label>
+              </div>
+
+              <button type="submit">Отправить</button>
+            </form>
           </div>
         </div>
       </section>
@@ -449,13 +486,19 @@
         <div class="subscribe-form">
           <label class="subscribe-label" for="subscribe">Подпишитесь на рассылку</label>
           <div class="input-btn-container">
-            <input class="subscribe-input" type="email" name="user-email" id="subscribe" placeholder="E-mail">
+            <input
+              class="subscribe-input"
+              type="email"
+              name="user-email"
+              id="subscribe"
+              placeholder="E-mail"
+            />
             <button type="submit" class="subscribe-btn">
               <span class="btn-title">Подписаться</span>
               <svg class="btn-icon" width="24" height="24">
-              <use href="./images/symbol-defs.svg#icon-send"></use>
-            </svg>
-          </button>
+                <use href="./images/symbol-defs.svg#icon-send"></use>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
