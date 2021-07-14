@@ -23,6 +23,17 @@ ul {
   padding: 0;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   color: var(--text-color);
@@ -133,7 +144,6 @@ body {
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 .menu-item:not(:last-child) {
@@ -170,7 +180,6 @@ body {
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 .contacts-link:hover,
@@ -186,7 +195,6 @@ body {
   transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 .contacts-link:hover .contacts-icon,
@@ -249,7 +257,6 @@ body {
   transition-property: background-color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 .hero-button:hover,
@@ -273,7 +280,6 @@ body {
   transition-property: opacity, background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 .modal {
@@ -321,7 +327,6 @@ body {
   transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 .modal-title {
@@ -375,7 +380,6 @@ body {
   transition-property: border-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0ms;
 }
 
 .input-name:focus,
@@ -386,24 +390,11 @@ body {
   outline: none;
 }
 
-.text-comment {
-  height: 120px;
-  padding: 12px 16px;
-  margin-bottom: 20px;
-  resize: none;
+.input-name:focus + .form-icon,
+.input-tel:focus + .form-icon,
+.input-mail:focus + .form-icon {
+  fill: var(--accent-color);
 }
-
-/* еще один див на свг и инпут
-трансформ 50% транслейтУ -50%
-через фокус пробовать
-
-чекбокс через бифор
-инпут:чекет + сосед::бифор {правило}
-
-визуали-хидден для скрытия
-
-спан в него свг в штмл
-*/
 
 .form-icon {
   position: absolute;
@@ -412,21 +403,21 @@ body {
 
   transform: translateY(-50%);
 
-  /* fill: rebeccapurple; */
-
-  /* transition-property: fill;
+  transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0; */
-}
-
-.input-name:hover + .form-icon {
-  fill: var(--accent-color);
 }
 
 .comment-wrap {
   display: flex;
   flex-direction: column;
+}
+
+.text-comment {
+  height: 120px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  resize: none;
 }
 
 .text-comment::placeholder {
@@ -446,6 +437,8 @@ body {
 }
 
 .agree-text {
+  display: flex;
+  align-items: center;
   margin-bottom: 0;
   font-size: 14px;
   line-height: 1.71;
@@ -453,31 +446,26 @@ body {
   color: var(--text-color);
 }
 
-.agree-text a {
-  color: var(--accent-color);
-}
-
-.check-border {
+.agree-text span {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;
-  border-radius: 1.5px;
-  margin-right: 8px;
+  margin-right: 7px;
   width: 16px;
   height: 15px;
+  border: 2px solid var(--logo-color);
+  border-radius: 2px;
+  fill: var(--text-color-on-hover-bg);
 }
 
-.user-check {
-  display: none;
+.user-check:checked + .agree-text span {
+  border: none;
+  background-color: var(--accent-color);
 }
 
-.icon-checked {
-  z-index: -2;
-}
-
-.user-check:checked + .icon-checked {
-  height: 50px;
+.agree-text a {
+  color: var(--accent-color);
+  margin-left: 4px;
 }
 
 .modal-btn {
@@ -496,7 +484,6 @@ body {
   transition-property: box-shadow, background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 .modal-btn:hover {
@@ -506,10 +493,6 @@ body {
 }
 
 /* Features */
-
-.features .title {
-  display: none;
-}
 
 .features-list {
   margin-bottom: 94px;
@@ -662,7 +645,6 @@ body {
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 .team-socials-link:hover,
@@ -683,7 +665,6 @@ body {
   transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 /* Clients */
@@ -720,7 +701,6 @@ body {
   transition-property: border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 .clients-link:hover,
@@ -741,7 +721,6 @@ body {
   transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 /* Footer */
@@ -800,7 +779,6 @@ body {
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 .footer-contacts:hover,
@@ -851,7 +829,6 @@ body {
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 .socials-link:hover,
@@ -918,7 +895,6 @@ body {
   transition-property: background-color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0ms;
 }
 
 .subscribe-btn:hover,
@@ -979,7 +955,6 @@ body {
   transition-property: background-color, color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 .filter-button:focus,
@@ -992,10 +967,6 @@ body {
 }
 
 /* Projects */
-
-.projects-title {
-  display: none;
-}
 
 .projects-list {
   display: flex;
@@ -1013,7 +984,6 @@ body {
   transition-property: box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 .projects-list > .item:hover {
