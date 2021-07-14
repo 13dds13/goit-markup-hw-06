@@ -341,7 +341,6 @@ body {
 .mail-wrap {
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 
 .form-name,
@@ -357,13 +356,18 @@ body {
   text-align: left;
 }
 
+.input-wrap {
+  position: relative;
+  margin-bottom: 10px;
+}
+
 .input-name,
 .input-tel,
 .input-mail,
 .text-comment {
   height: 40px;
+  width: 100%;
   padding-left: 42px;
-  margin-bottom: 10px;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
@@ -374,10 +378,10 @@ body {
   transition-delay: 0;
 }
 
-.input-name:focus-within,
-.input-tel:focus-within,
-.input-mail:focus-within,
-.text-comment:focus-within {
+.input-name:focus,
+.input-tel:focus,
+.input-mail:focus,
+.text-comment:focus {
   border-color: var(--accent-color);
   outline: none;
 }
@@ -393,10 +397,24 @@ body {
   resize: none;
 }
 
+/* еще один див на свг и инпут
+трансформ 50% транслейтУ -50%
+через фокус пробовать
+
+чекбокс через бифор
+инпут:чекет + сосед::бифор {правило}
+
+визуали-хидден для скрытия
+
+спан в него свг в штмл
+*/
+
 .form-icon {
   position: absolute;
-  top: 29px;
+  top: 50%;
   left: 12px;
+
+  transform: translateY(-50%);
 
   fill: var(--logo-color);
 
