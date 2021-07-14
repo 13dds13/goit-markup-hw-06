@@ -390,9 +390,22 @@ body {
   outline: none;
 }
 
+.input-name:hover,
+.input-tel:hover,
+.input-mail:hover,
+.text-comment:hover {
+  border-color: var(--accent-color);
+}
+
 .input-name:focus + .form-icon,
 .input-tel:focus + .form-icon,
 .input-mail:focus + .form-icon {
+  fill: var(--accent-color);
+}
+
+.input-name:hover + .form-icon,
+.input-tel:hover + .form-icon,
+.input-mail:hover + .form-icon {
   fill: var(--accent-color);
 }
 
